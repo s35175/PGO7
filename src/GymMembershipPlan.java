@@ -25,4 +25,19 @@
     public boolean canFreeze() {
         return true;
     }
+}public class GymMembershipPlan extends MembershipPlan {
+
+    public GymMembershipPlan(String planCode, String clientName, int months, double baseMonthlyFee, boolean autoRenew) {
+        super(planCode, clientName, months, baseMonthlyFee, autoRenew);
+    }
+
+    @Override
+    public String getPlanType() {
+        return "Gym Membership";
+    }
+
+    @Override
+    public double calculateMonthlyNetPrice() {
+        return this.baseMonthlyFee; 
+    }
 }

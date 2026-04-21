@@ -1,4 +1,4 @@
-﻿public abstract class MembershipPlan implements Billable {
+public abstract class MembershipPlan implements Billable {
 
     private String planCode;
     private String clientName;
@@ -16,6 +16,12 @@
 
     public abstract String getPlanType();
 
+  
+    @Override
+    public abstract double calculateMonthlyNetPrice();
+
+    z
+    @Override
     public double calculateMonthlyGrossPrice() {
         return calculateMonthlyNetPrice() * 1.23;
     }
@@ -32,7 +38,10 @@
         System.out.println("-------------");
     }
 
+  
+    @Override
     public String toString() {
         return "Plan: " + planCode + ", Client: " + clientName + ", Months: " + months;
     }
+}
 }
